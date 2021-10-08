@@ -7,15 +7,13 @@ import { Vehiculo } from '../_model/Vehiculo';
   providedIn: 'root'
 })
 export class VehiculoService {
-
   private url: string = `${environment.HOST}/vehiculos`;
-  
   constructor(private http: HttpClient) { }
 
   public guardar(vehiculo: Vehiculo){
       return this.http.post(`${this.url}/guardar`, vehiculo);
   }
-  public Carlistar() {
-    return this.http.get<Vehiculo[]>(`${this.url}/pageable`);
+  public Carlistar(page: number, size: number) {
+    return this.http.get<any>(`${this.url}/pageable?page=${page}&size=${size}`);
   }
 }
