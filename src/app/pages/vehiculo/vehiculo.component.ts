@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
-import { MatPaginator } from '@angular/material/paginator';
+
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
 import { Vehiculo } from 'src/app/_model/Vehiculo';
@@ -43,7 +43,7 @@ export class VehiculoComponent implements OnInit {
       this.dataSource.sort = this.sort;
     });
   }
-  applyFilter(filterValue: string) {
+  filtrotabla(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLocaleLowerCase();
   }
 

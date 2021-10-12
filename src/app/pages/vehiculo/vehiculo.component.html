@@ -1,9 +1,19 @@
-<div [hidden]="route.children.length !== 0" >
+<div  [hidden]="route.children.length !== 0" >
+
+  <mat-form-field>
+    <mat-label>Filtro</mat-label>
+    <input
+      matInput
+      (keyup)="filtrotabla($event.target.value)"
+      placeholder="Filtrar"
+      #input
+    />
+  </mat-form-field>
+
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-        <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
-
+      
+        
         <!-- Position codigo -->
         <ng-container matColumnDef="idVehiculo">
             <th mat-header-cell *matHeaderCellDef> Código. </th>
