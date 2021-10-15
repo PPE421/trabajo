@@ -1,6 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild,  } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
-
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
 import { Vehiculo } from 'src/app/_model/Vehiculo';
@@ -29,9 +28,8 @@ export class VehiculoComponent implements OnInit {
       this.listar();
     }
   cambio(e: any){
-    //indice de pagina
+
     this.pageIndex = e.pageIndex;
-    //tamaño de paginado
     this.pageSize = e.pageSize;
     this.listar();
   }
@@ -44,6 +42,7 @@ export class VehiculoComponent implements OnInit {
     });
   }
   filtrotabla(filterValue: string) {
+    
     this.dataSource.filter = filterValue.trim().toLocaleLowerCase();
   }
 

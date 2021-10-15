@@ -16,4 +16,8 @@ export class VehiculoService {
   public Carlistar(page: number, size: number) {
     return this.http.get<any>(`${this.url}/pageable?page=${page}&size=${size}`);
   }
+
+  public listarIdVehiculo(idVehiculo: number){
+    return this.http.get<Vehiculo>(`${this.url}/listar/${idVehiculo}`);
+  }
 }
